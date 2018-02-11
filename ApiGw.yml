@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ApiGw
+
+server:
+  port: 8080
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    bill:
+      path: /bill/**
+      serviceId: Bill
+      stripPrefix: true
+    guest:
+      path: /guest/**
+      serviceId: Guest
+      stripPrefix: true
